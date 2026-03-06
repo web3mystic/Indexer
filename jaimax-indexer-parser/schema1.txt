@@ -1,0 +1,282 @@
+      table_name       |        column_name         |          data_type          
+-----------------------+----------------------------+-----------------------------
+ address_transactions  | address                    | character varying
+ address_transactions  | tx_hash                    | character varying
+ address_transactions  | height                     | bigint
+ address_transactions  | created_at                 | timestamp without time zone
+ authority_accounts    | address                    | character varying
+ authority_accounts    | added_at                   | timestamp without time zone
+ authority_accounts    | added_by                   | character varying
+ authority_accounts    | added_at_height            | bigint
+ authority_accounts    | active                     | boolean
+ authority_accounts    | removed_at                 | timestamp without time zone
+ authority_accounts    | removed_by                 | character varying
+ authority_accounts    | source                     | character varying
+ authority_accounts    | updated_at                 | timestamp without time zone
+ authority_accounts    | created_at                 | timestamp without time zone
+ balances              | address                    | character varying
+ balances              | denom                      | character varying
+ balances              | amount                     | text
+ balances              | height                     | bigint
+ balances              | updated_at                 | timestamp without time zone
+ balances              | created_at                 | timestamp without time zone
+ bank_transfers        | id                         | bigint
+ bank_transfers        | tx_hash                    | character varying
+ bank_transfers        | msg_index                  | integer
+ bank_transfers        | height                     | bigint
+ bank_transfers        | from_address               | character varying
+ bank_transfers        | to_address                 | character varying
+ bank_transfers        | amount                     | text
+ bank_transfers        | denom                      | character varying
+ bank_transfers        | amount_value               | numeric
+ bank_transfers        | timestamp                  | timestamp without time zone
+ bank_transfers        | created_at                 | timestamp without time zone
+ blocks                | height                     | bigint
+ blocks                | hash                       | character varying
+ blocks                | time                       | timestamp without time zone
+ blocks                | proposer_address           | character varying
+ blocks                | tx_count                   | integer
+ blocks                | created_at                 | timestamp without time zone
+ contract_activity     | contract_address           | character varying
+ contract_activity     | label                      | text
+ contract_activity     | code_id                    | bigint
+ contract_activity     | creator                    | character varying
+ contract_activity     | total_executions           | bigint
+ contract_activity     | last_execution             | timestamp without time zone
+ contract_activity     | unique_users               | bigint
+ cw20_address_activity | contract_address           | character varying
+ cw20_address_activity | address                    | character varying
+ cw20_address_activity | transfers_sent             | bigint
+ cw20_address_activity | total_sent                 | numeric
+ cw20_transfers        | id                         | bigint
+ cw20_transfers        | tx_hash                    | character varying
+ cw20_transfers        | msg_index                  | integer
+ cw20_transfers        | height                     | bigint
+ cw20_transfers        | contract_address           | character varying
+ cw20_transfers        | action                     | character varying
+ cw20_transfers        | from_address               | character varying
+ cw20_transfers        | to_address                 | character varying
+ cw20_transfers        | amount                     | numeric
+ cw20_transfers        | memo                       | text
+ cw20_transfers        | raw_attributes             | jsonb
+ cw20_transfers        | timestamp                  | timestamp without time zone
+ cw20_transfers        | created_at                 | timestamp without time zone
+ events                | id                         | integer
+ events                | tx_hash                    | character varying
+ events                | event_index                | integer
+ events                | event_type                 | character varying
+ events                | attributes                 | jsonb
+ events                | created_at                 | timestamp without time zone
+ indexer_state         | id                         | integer
+ indexer_state         | last_height                | bigint
+ indexer_state         | last_block_hash            | character varying
+ indexer_state         | updated_at                 | timestamp without time zone
+ messages              | id                         | integer
+ messages              | tx_hash                    | character varying
+ messages              | msg_index                  | integer
+ messages              | msg_type                   | character varying
+ messages              | sender                     | character varying
+ messages              | receiver                   | character varying
+ messages              | amount                     | text
+ messages              | denom                      | character varying
+ messages              | raw_data                   | jsonb
+ messages              | created_at                 | timestamp without time zone
+ proposal_sync_state   | id                         | integer
+ proposal_sync_state   | last_sync_height           | bigint
+ proposal_sync_state   | last_sync_time             | timestamp without time zone
+ proposal_sync_state   | updated_at                 | timestamp without time zone
+ proposals             | proposal_id                | bigint
+ proposals             | title                      | character varying
+ proposals             | description                | text
+ proposals             | proposal_type              | character varying
+ proposals             | status                     | character varying
+ proposals             | submit_time                | timestamp without time zone
+ proposals             | deposit_end_time           | timestamp without time zone
+ proposals             | voting_start_time          | timestamp without time zone
+ proposals             | voting_end_time            | timestamp without time zone
+ proposals             | total_deposit              | text
+ proposals             | deposit_denom              | character varying
+ proposals             | metadata                   | text
+ proposals             | messages                   | jsonb
+ proposals             | yes_votes                  | text
+ proposals             | no_votes                   | text
+ proposals             | abstain_votes              | text
+ proposals             | no_with_veto_votes         | text
+ proposals             | proposer                   | character varying
+ proposals             | height                     | bigint
+ proposals             | updated_at                 | timestamp without time zone
+ proposals             | created_at                 | timestamp without time zone
+ recent_transactions   | hash                       | character varying
+ recent_transactions   | height                     | bigint
+ recent_transactions   | tx_index                   | integer
+ recent_transactions   | success                    | boolean
+ recent_transactions   | gas_used                   | bigint
+ recent_transactions   | gas_wanted                 | bigint
+ recent_transactions   | fee                        | text
+ recent_transactions   | memo                       | text
+ recent_transactions   | timestamp                  | timestamp without time zone
+ recent_transactions   | block_time                 | timestamp without time zone
+ recent_wasm_activity  | tx_hash                    | character varying
+ recent_wasm_activity  | height                     | bigint
+ recent_wasm_activity  | contract_address           | character varying
+ recent_wasm_activity  | contract_label             | text
+ recent_wasm_activity  | action                     | character varying
+ recent_wasm_activity  | sender                     | text
+ recent_wasm_activity  | recipient                  | text
+ recent_wasm_activity  | amount                     | text
+ recent_wasm_activity  | timestamp                  | timestamp without time zone
+ transactions          | hash                       | character varying
+ transactions          | height                     | bigint
+ transactions          | tx_index                   | integer
+ transactions          | gas_used                   | bigint
+ transactions          | gas_wanted                 | bigint
+ transactions          | fee                        | text
+ transactions          | success                    | boolean
+ transactions          | code                       | integer
+ transactions          | log                        | text
+ transactions          | memo                       | text
+ transactions          | msg_types                  | jsonb
+ transactions          | addresses                  | jsonb
+ transactions          | timestamp                  | timestamp without time zone
+ transactions          | created_at                 | timestamp without time zone
+ validator_history     | id                         | integer
+ validator_history     | operator_address           | character varying
+ validator_history     | height                     | bigint
+ validator_history     | status                     | character varying
+ validator_history     | jailed                     | boolean
+ validator_history     | power                      | bigint
+ validator_history     | tokens                     | text
+ validator_history     | changed_by                 | character varying
+ validator_history     | change_type                | character varying
+ validator_history     | old_power                  | bigint
+ validator_history     | new_power                  | bigint
+ validator_history     | timestamp                  | timestamp without time zone
+ validator_history     | created_at                 | timestamp without time zone
+ validator_stats       | operator_address           | character varying
+ validator_stats       | moniker                    | character varying
+ validator_stats       | status                     | character varying
+ validator_stats       | jailed                     | boolean
+ validator_stats       | power                      | bigint
+ validator_stats       | tokens                     | text
+ validator_stats       | added_by                   | character varying
+ validator_stats       | added_at                   | timestamp without time zone
+ validator_stats       | total_changes              | bigint
+ validator_stats       | last_change                | timestamp without time zone
+ validator_stats       | blocks_proposed            | bigint
+ validator_stats       | updated_at                 | timestamp without time zone
+ validator_sync_state  | id                         | integer
+ validator_sync_state  | last_sync_height           | bigint
+ validator_sync_state  | last_sync_time             | timestamp without time zone
+ validator_sync_state  | updated_at                 | timestamp without time zone
+ validators            | operator_address           | character varying
+ validators            | consensus_address          | character varying
+ validators            | consensus_pubkey           | text
+ validators            | moniker                    | character varying
+ validators            | identity                   | character varying
+ validators            | website                    | character varying
+ validators            | security_contact           | character varying
+ validators            | details                    | text
+ validators            | jailed                     | boolean
+ validators            | status                     | character varying
+ validators            | power                      | bigint
+ validators            | voting_power               | bigint
+ validators            | tokens                     | text
+ validators            | delegator_shares           | text
+ validators            | added_by                   | character varying
+ validators            | added_at                   | timestamp without time zone
+ validators            | added_at_height            | bigint
+ validators            | unbonding_height           | bigint
+ validators            | unbonding_time             | timestamp without time zone
+ validators            | commission_rate            | text
+ validators            | commission_max_rate        | text
+ validators            | commission_max_change_rate | text
+ validators            | min_self_delegation        | text
+ validators            | updated_at                 | timestamp without time zone
+ validators            | created_at                 | timestamp without time zone
+ votes                 | id                         | integer
+ votes                 | proposal_id                | bigint
+ votes                 | voter                      | character varying
+ votes                 | option                     | character varying
+ votes                 | options                    | jsonb
+ votes                 | height                     | bigint
+ votes                 | tx_hash                    | character varying
+ votes                 | timestamp                  | timestamp without time zone
+ votes                 | created_at                 | timestamp without time zone
+ wasm_codes            | code_id                    | bigint
+ wasm_codes            | creator                    | character varying
+ wasm_codes            | checksum                   | character varying
+ wasm_codes            | permission                 | character varying
+ wasm_codes            | uploaded_height            | bigint
+ wasm_codes            | uploaded_time              | timestamp without time zone
+ wasm_codes            | upload_tx_hash             | character varying
+ wasm_codes            | created_at                 | timestamp without time zone
+ wasm_contracts        | contract_address           | character varying
+ wasm_contracts        | code_id                    | bigint
+ wasm_contracts        | creator                    | character varying
+ wasm_contracts        | admin                      | character varying
+ wasm_contracts        | label                      | text
+ wasm_contracts        | init_msg                   | jsonb
+ wasm_contracts        | contract_info              | jsonb
+ wasm_contracts        | instantiated_at_height     | bigint
+ wasm_contracts        | instantiated_at_time       | timestamp without time zone
+ wasm_contracts        | instantiate_tx_hash        | character varying
+ wasm_contracts        | current_code_id            | bigint
+ wasm_contracts        | last_migrated_height       | bigint
+ wasm_contracts        | last_migrated_tx_hash      | character varying
+ wasm_contracts        | is_active                  | boolean
+ wasm_contracts        | updated_at                 | timestamp without time zone
+ wasm_contracts        | created_at                 | timestamp without time zone
+ wasm_events           | id                         | bigint
+ wasm_events           | tx_hash                    | character varying
+ wasm_events           | msg_index                  | integer
+ wasm_events           | event_index                | integer
+ wasm_events           | height                     | bigint
+ wasm_events           | contract_address           | character varying
+ wasm_events           | action                     | character varying
+ wasm_events           | raw_attributes             | jsonb
+ wasm_events           | timestamp                  | timestamp without time zone
+ wasm_events           | created_at                 | timestamp without time zone
+ wasm_executions       | id                         | bigint
+ wasm_executions       | tx_hash                    | character varying
+ wasm_executions       | msg_index                  | integer
+ wasm_executions       | height                     | bigint
+ wasm_executions       | sender                     | character varying
+ wasm_executions       | contract_address           | character varying
+ wasm_executions       | execute_msg                | jsonb
+ wasm_executions       | execute_action             | character varying
+ wasm_executions       | funds                      | jsonb
+ wasm_executions       | gas_used                   | bigint
+ wasm_executions       | success                    | boolean
+ wasm_executions       | error                      | text
+ wasm_executions       | timestamp                  | timestamp without time zone
+ wasm_executions       | created_at                 | timestamp without time zone
+ wasm_instantiations   | id                         | bigint
+ wasm_instantiations   | tx_hash                    | character varying
+ wasm_instantiations   | msg_index                  | integer
+ wasm_instantiations   | height                     | bigint
+ wasm_instantiations   | creator                    | character varying
+ wasm_instantiations   | admin                      | character varying
+ wasm_instantiations   | code_id                    | bigint
+ wasm_instantiations   | label                      | text
+ wasm_instantiations   | contract_address           | character varying
+ wasm_instantiations   | init_msg                   | jsonb
+ wasm_instantiations   | funds                      | jsonb
+ wasm_instantiations   | success                    | boolean
+ wasm_instantiations   | error                      | text
+ wasm_instantiations   | timestamp                  | timestamp without time zone
+ wasm_instantiations   | created_at                 | timestamp without time zone
+ wasm_migrations       | id                         | bigint
+ wasm_migrations       | tx_hash                    | character varying
+ wasm_migrations       | msg_index                  | integer
+ wasm_migrations       | height                     | bigint
+ wasm_migrations       | sender                     | character varying
+ wasm_migrations       | contract_address           | character varying
+ wasm_migrations       | old_code_id                | bigint
+ wasm_migrations       | new_code_id                | bigint
+ wasm_migrations       | migrate_msg                | jsonb
+ wasm_migrations       | success                    | boolean
+ wasm_migrations       | error                      | text
+ wasm_migrations       | timestamp                  | timestamp without time zone
+ wasm_migrations       | created_at                 | timestamp without time zone
+(278 rows)
+
