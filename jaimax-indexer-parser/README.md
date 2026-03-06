@@ -1,4 +1,4 @@
-# jaimax Blockchain Indexer
+# Blockchain Indexer
 
 A production-ready, high-performance blockchain indexer for jaimax SDK chains. This indexer follows enterprise-grade architecture with clean separation of concerns.
 
